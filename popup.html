@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blinkers</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="inline-friction.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">BLINKERS</div>
+        <h1>Stay on task.</h1>
+      </div>
+      <span id="statusPill" class="status-pill">Loading</span>
+    </header>
+
+    <section class="card mode-card">
+      <div>
+        <strong id="modeTitle">Simple mode</strong>
+        <div id="modeSubtext" class="muted small">Loading status…</div>
+      </div>
+      <div id="simpleAllowance" class="allowance">
+        <div class="muted small">Time left today</div>
+        <div id="simpleTimeLeft" class="allowance-time">--</div>
+        <button id="extraTimeChallenge" class="btn btn-primary full hidden">Complete challenge for 15 min</button>
+      </div>
+      <div id="ultraActions" class="hidden">
+        <button id="ultraBreak" class="btn btn-primary full">Use 5-minute break</button>
+        <div id="ultraBreakNote" class="muted small center"></div>
+      </div>
+    </section>
+
+    <div id="diagnosticNotice" class="notice diagnostic hidden"></div>
+
+    <section class="card quick-add">
+      <div class="section-title-row">
+        <h2>Quick blocklist</h2>
+        <button id="addCurrentSite" class="btn btn-ghost">+ current site</button>
+      </div>
+      <form id="addForm" class="add-row">
+        <input id="patternInput" class="input" placeholder="reddit.com or *.reddit.com" autocomplete="off" aria-label="Site or pattern">
+        <button class="btn btn-primary" type="submit">Add</button>
+      </form>
+      <div id="lockNote" class="notice hidden"></div>
+      <div id="blocklist" class="blocklist"></div>
+    </section>
+
+    <section class="card usage-card">
+      <div class="section-title-row">
+        <h2>Today’s top sites</h2>
+      </div>
+      <div id="usageChart" class="chart"></div>
+    </section>
+
+    <div id="message" class="notice hidden"></div>
+
+    <footer>
+      <button id="openOptions" class="btn btn-secondary full">Open full settings</button>
+    </footer>
+  </main>
+
+  <div id="simpleChallenge" class="inline-friction-backdrop hidden" role="dialog" aria-modal="true" aria-label="Extra time challenge"></div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

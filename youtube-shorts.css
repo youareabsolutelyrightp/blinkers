@@ -1,0 +1,53 @@
+html.blinkers-hide-youtube-shorts :is(
+  ytd-reel-shelf-renderer,
+  ytd-rich-shelf-renderer[is-shorts],
+  ytd-rich-shelf-renderer:has(a[href^="/shorts"]),
+  ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+  ytd-video-renderer:has(a[href^="/shorts/"]),
+  ytd-grid-video-renderer:has(a[href^="/shorts/"]),
+  ytd-compact-video-renderer:has(a[href^="/shorts/"]),
+  ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+  ytd-guide-entry-renderer:has([title="Shorts"]),
+  ytd-guide-entry-renderer:has([aria-label="Shorts"]),
+  ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
+  ytd-mini-guide-entry-renderer:has([title="Shorts"]),
+  ytm-guide-entry-renderer:has(a[href^="/shorts"]),
+  ytm-guide-entry-renderer:has([title="Shorts"]),
+  ytm-pivot-bar-item-renderer:has(a[href^="/shorts"]),
+  ytm-pivot-bar-item-renderer:has([title="Shorts"]),
+  yt-lockup-view-model:has(a[href^="/shorts/"]),
+  yt-tab-shape:has(a[href$="/shorts"]),
+  tp-yt-paper-tab:has(a[href$="/shorts"]),
+  ytm-shorts-lockup-view-model,
+  ytm-shorts-lockup-view-model-v2
+) {
+  display: none !important;
+}
+
+html.blinkers-hide-youtube-shorts :is(
+  ytd-shelf-renderer,
+  ytd-horizontal-card-list-renderer,
+  yt-horizontal-list-renderer,
+  grid-shelf-view-model,
+  yt-shelf-view-model
+):has(:is(
+  a[href^="/shorts/"],
+  a[href*="youtube.com/shorts/"],
+  [title="Shorts"],
+  [aria-label="Shorts"],
+  ytm-shorts-lockup-view-model,
+  ytm-shorts-lockup-view-model-v2
+)) {
+  display: none !important;
+}
+
+html.blinkers-hide-youtube-shorts :is(
+  a[href="/shorts"],
+  a[href^="/shorts/"],
+  a[href*="youtube.com/shorts/"],
+  [title="Shorts"],
+  [aria-label="Shorts"],
+  .blinkers-youtube-shorts-filter
+) {
+  display: none !important;
+}

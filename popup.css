@@ -1,0 +1,20 @@
+body { width: 390px; min-height: 560px; }
+.popup-shell { padding: 16px; display: grid; gap: 12px; }
+.topbar { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.eyebrow { color: var(--accent); font-weight: 900; font-size: 10px; letter-spacing: .14em; }
+h1 { margin: 3px 0 0; font-size: 22px; }
+h2 { margin: 0; font-size: 14px; }
+.mode-card, .quick-add, .usage-card { padding: 14px; }
+.allowance { margin-top: 12px; padding: 12px; border-radius: 12px; background: var(--surface-soft); text-align: center; }
+.allowance-time { margin: 2px 0 10px; font-size: 28px; font-weight: 900; font-variant-numeric: tabular-nums; }
+.full { width: 100%; }
+.center { text-align: center; margin-top: 8px; }
+.section-title-row { display: flex; justify-content: space-between; gap: 8px; align-items: center; margin-bottom: 10px; }
+.add-row { display: grid; grid-template-columns: 1fr auto; gap: 7px; }
+.blocklist { margin-top: 10px; display: grid; gap: 5px; max-height: 128px; overflow: auto; }
+.block-item { display: flex; justify-content: space-between; gap: 8px; align-items: center; padding: 7px 9px; border-radius: 8px; background: var(--surface-soft); }
+.block-item code { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+.remove { border: 0; background: transparent; color: var(--danger); font-size: 18px; line-height: 1; padding: 0 3px; }
+.empty { padding: 12px 0; text-align: center; color: var(--muted); font-size: 12px; }
+
+.diagnostic { margin: 0; font-size: 11px; line-height: 1.4; }

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blinkers Settings</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">BLINKERS</div>
+        <h1>Block distractions.</h1>
+      </div>
+      <div class="header-controls">
+        <span id="statusPill" class="status-pill">Loading</span>
+        <label class="switch">
+          <input id="extensionToggle" type="checkbox" aria-label="Enable Blinkers" disabled>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card panel span-2">
+      <div class="panel-head">
+        <div>
+          <h2>Mode controls</h2>
+          <p id="modeSummary" class="muted">Loading…</p>
+        </div>
+      </div>
+
+      <div class="mode-columns">
+        <div class="mode-box">
+          <div class="mode-label">SIMPLE</div>
+          <h3>Daily allowance</h3>
+          <p class="muted">Set daily active time for sites on the blocklist.</p>
+          <label class="field-label" for="simpleDailyMinutes">Daily minutes (0–120)</label>
+          <div class="daily-limit-row">
+            <input id="simpleDailyMinutes" class="input" type="number" min="0" max="120" step="1" value="30">
+            <button id="saveSimpleLimit" class="btn btn-primary">Save limit</button>
+          </div>
+          <p id="simpleUsageNote" class="muted small"></p>
+          <p class="muted small">Completing the short challenge adds 15 minutes after the limit is reached.</p>
+        </div>
+
+        <div class="mode-box ultra-box">
+          <div class="mode-label">ULTRA</div>
+          <h3>Fixed commitment</h3>
+          <p class="muted">Choose a fixed blocking period. Sessions of at least one hour include 5-minute breaks.</p>
+          <div id="ultraSetup">
+            <div class="duration-row">
+              <input id="ultraDuration" class="input" type="number" min="0.25" max="168" step="0.25" value="2" aria-label="Ultra duration">
+              <select id="ultraUnit" class="select" aria-label="Ultra duration unit">
+                <option value="minutes">minutes</option>
+                <option value="hours" selected>hours</option>
+              </select>
+            </div>
+            <label class="field-label" for="ultraCommitment">Type <strong>LOCK IT IN</strong></label>
+            <input id="ultraCommitment" class="input" autocomplete="off" spellcheck="false">
+            <button id="startUltra" class="btn btn-primary full">Start Ultra mode</button>
+          </div>
+          <div id="ultraRunning" class="hidden">
+            <div id="ultraDetails" class="notice"></div>
+            <button id="ultraBreak" class="btn btn-primary full">Use 5-minute break</button>
+            <div id="ultraBreakNote" class="muted small center"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <div>
+          <h2>Blocklist</h2>
+          <p class="muted">One entry per line. Wildcards are supported.</p>
+        </div>
+        <span id="listCount" class="count"></span>
+      </div>
+      <textarea id="blocklistText" class="textarea" spellcheck="false" aria-label="Blocklist" placeholder="reddit.com&#10;*.twitter.com&#10;https://youtube.com/shorts/*"></textarea>
+      <div class="example small muted"><strong>Matching:</strong> naked domains include subdomains; <code>*.example.com</code> also includes the root; URL paths can use <code>*</code>.</div>
+      <div class="row">
+        <button id="saveBlocklist" class="btn btn-primary">Save blocklist</button>
+      </div>
+      <div id="listLock" class="notice hidden"></div>
+      <div id="ruleErrors" class="notice error hidden"></div>
+    </section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <div>
+          <h2>Top websites</h2>
+          <p class="muted">Active-tab time while Chrome is focused.</p>
+        </div>
+        <select id="usageRange" class="select compact-select" aria-label="Usage range">
+          <option value="1">Today</option>
+          <option value="7">Last 7 days</option>
+          <option value="30">Last 30 days</option>
+        </select>
+      </div>
+      <div id="usageChart" class="chart large-chart"></div>
+      <div class="row between">
+        <div id="usageTotal" class="muted small"></div>
+        <button id="resetUsage" class="btn btn-danger">Reset time data</button>
+      </div>
+    </section>
+
+    <section class="card panel">
+      <div class="setting-row">
+        <div>
+          <h2>Block YouTube Shorts</h2>
+          <p class="muted">Hide Shorts and redirect direct Shorts links.</p>
+        </div>
+        <label class="switch">
+          <input id="hideYouTubeShorts" type="checkbox" aria-label="Disable YouTube Shorts">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <div id="message" class="notice floating hidden"></div>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

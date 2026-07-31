@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blocked by Blinkers</title>
+  <link rel="stylesheet" href="blocked.css">
+  <link rel="stylesheet" href="inline-friction.css">
+</head>
+<body>
+  <main class="blocked-card">
+    <div class="shield" aria-hidden="true">✓</div>
+    <div class="eyebrow">BLINKERS</div>
+    <h1>This page is blocked.</h1>
+    <p id="blockedUrl" class="url"></p>
+    <div id="status" class="status-box">Checking focus mode…</div>
+    <div class="actions">
+      <button id="goBack" class="primary">Go back</button>
+      <button id="temporaryAccess" class="secondary hidden"></button>
+      <button id="openSettings" class="text-button">Open settings</button>
+    </div>
+  </main>
+  <div id="simpleChallenge" class="inline-friction-backdrop hidden" role="dialog" aria-modal="true" aria-label="Extra time challenge"></div>
+  <script type="module" src="blocked.js"></script>
+</body>
+</html>
