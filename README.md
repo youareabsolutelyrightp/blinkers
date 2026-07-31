@@ -1,6 +1,6 @@
 # Blinkers
 
-Simple Chrome extension to block distracting websites.
+Chrome extension to block distracting websites.
 
 <img width="60%" alt="Settings_Page" src="https://github.com/user-attachments/assets/b8eace9b-a923-4992-99ea-d82df1acb751" />
 
