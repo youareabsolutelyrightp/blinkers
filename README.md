@@ -1,6 +1,9 @@
 # Blinkers
 
-Simple Chrome extension for blocking distracting websites. It uses dynamic network rules plus a tab-navigation guard to enforce a blocklist.
+Simple Chrome extension to block distracting websites.
+
+<img width="60%" alt="Settings_Page" src="https://github.com/user-attachments/assets/b8eace9b-a923-4992-99ea-d82df1acb751" />
+
 
 ## Install locally
 
